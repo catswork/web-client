@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 
-import './app.css'
+import App from './container/App'
 
-ReactDOM.render(<h1>Hello world</h1>, document.querySelector('#root'))
+import './less/global.less'
+
+ReactDOM.render(<App />, document.querySelector('#root'))

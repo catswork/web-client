@@ -15,18 +15,31 @@ const config = {
 				loader: 'babel-loader'
 			},
 			{
-				test: /\.css$/,
+				test: /\.less$/,
 				use: [
 					{ loader: MiniCSSExtractPlugin.loader },
-					'css-loader'
+					{
+						loader: 'css-loader',
+						options: { modules: true }
+					},
+					'less-loader'
+				]
+			},
+			{
+				test: /\.(png|jpg|svg)$/,
+				use: [
+					{
+						loader: 'url-loader',
+						options: { limit: 8192 }
+					}
 				]
 			}
 		]
 	},
 	output: {
 		filename: '[name].js',	// [name] resolves to name of bundle (e.g., app)
-		path: path.resolve('./build'),
-		publicPath: path.resolve('./build/public')
+		path: path.resolve('./build/public'),
+		publicPath: '/public/'
 	},
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),

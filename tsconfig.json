@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"baseUrl": "src",
+		"experimentalDecorators": true
+	},
+	"exclude": [
+		"node_modules",
+		"build"
+	]
+}

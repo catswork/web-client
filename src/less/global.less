@@ -1,0 +1,70 @@
+@import (reference) './variables.less';
+
+html {
+	color: @dark;
+	font-family: 'Karla', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+body {
+	margin: 0;
+}
+
+input, textarea, select, button {
+	font: inherit;
+	font-family: 'Lato', sans-serif;
+	outline: none;
+}
+
+button, :global(.button) {
+	color: @dark;
+	padding: 0.625em 1.5em;
+	background-color: fade(@secondary, 87.5%);
+	border: 2px solid @dark;
+	border-radius: 2em;
+	font-size: 0.8em;
+	font-weight: 300;
+	letter-spacing: 0.125em;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	box-sizing: content-box;
+	transition: background-color 0.375s ease;
+
+	&:hover {
+		background-color: @white;
+	}
+
+	&:global(.light) {
+		background-color: @white;
+		border: 2px solid @light;
+		transition: border 0.375s ease;
+
+		&:hover {
+			border: 2px solid @dark;
+		}
+	}
+}
+
+:global(.page) {
+	width: 45em;
+	max-width: ~'calc(100% - 3em)';
+	margin: 1.5em auto;
+}
+
+h1 {
+	margin: 0.375em 0;
+	font-size: 2.5em;
+}
+
+p {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+:global(.link) {
+	color: darken(@primary, 15%);
+	font-weight: 400;
+	text-decoration: none;
+}
